@@ -4,22 +4,39 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const StyledAuthor = styled.div`
+  margin-top: var(--one);
+  margin-bottom: var(--one);
   font-family: var(--serif);
   display: flex;
+
+  align-items: center;
 
   .gatsby-image-wrapper {
     border-radius: 50%;
   }
 
   .author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: var(--one);
   }
 
   .author-name,
   .date-published {
     margin: 0;
-    color: var(--dark-2);
+    color: var(--dark-1);
     font-weight: lighter;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      /* css var not working here */
+      text-decoration-color: black;
+    }
   }
 `
 
@@ -42,8 +59,10 @@ export default function Author({ avatarUrl, name, datePublished }) {
     <StyledAuthor>
       <Img fixed={file.childImageSharp.fixed} />
       <div className="author-info">
-        <h6 className="author-name">Tanner Gaucher</h6>
-        <h6 className="date-published">6/23/2019</h6>
+        <a href="/author=social">
+          <h5 className="author-name">Tanner Gaucher</h5>
+          <h5 className="date-published">6/23/2019</h5>
+        </a>
       </div>
     </StyledAuthor>
   )

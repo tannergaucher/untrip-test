@@ -29,10 +29,12 @@
   --seven: 7rem;
   --eight: 8rem;
   /* LAYOUT */
-  --container: 800px;
+  --container: 760px;
   /* STYLES */
   --radius: 4px;
-  --border: 1px;
+  --border: 1.5px;
+  --darken-filter: brightness(0.7);
+
   /* RESPONSIVE */
   --mobile: 600px;
   /* (tablet is implied) */
@@ -43,6 +45,7 @@
   --text-color: black;
   --line-height: 1.667;
   --font-size: 21px;
+  --href-color: blue;
   /* ELEVATION */
   --shadow: rgba(0, 0, 0, 0.2);
   --elevation-1: 0px 0px 4px var(--shadow);
@@ -71,4 +74,8 @@ code {
 
 p {
   line-height: var(--line-height);
+}
+
+a {
+  color: var(--href-color);
 }

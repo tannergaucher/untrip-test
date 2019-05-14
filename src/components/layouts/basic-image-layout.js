@@ -6,7 +6,6 @@ import Header from "../header"
 import Footer from "../footer"
 
 const StyledLayout = styled.div`
-  /*  */
   header {
     a {
       color: var(--dark-1);
@@ -24,8 +23,6 @@ const StyledLayout = styled.div`
 `
 
 export default function BasicImageLayout({ children, title, fluid }) {
-  //
-
   return (
     <StyledLayout>
       <Header />

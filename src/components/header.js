@@ -7,7 +7,6 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  width: 100%;
 
   h3 {
     margin: var(--one);

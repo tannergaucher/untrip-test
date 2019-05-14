@@ -3,6 +3,8 @@ import styled from "styled-components"
 
 import Author from "../components/post-author"
 import Tags from "../components/post-tags"
+import Share from "../components/share"
+import TogglePlace from "../containers/toggle-place"
 
 // LAYOUTS
 import FullBanner from "../components/layouts/full-banner-layout"
@@ -11,21 +13,69 @@ import HalfBanner from "../components/layouts/half-banner-layout"
 import BasicImage from "../components/layouts/basic-image-layout"
 
 const Container = styled.div`
-  background: lime;
+  display: flex;
+  /* background: lime; */
   max-width: var(--container);
-  margin: var(--one) auto;
+
+  /* margin: var(--one) auto; */
   padding-left: var(--one);
   padding-right: var(--one);
+
+  /* RESPONSIVE VERTICAL MARGINS */
+
+  /* mobile */
+  @media (max-width: 600px) {
+    margin: var(--one) auto;
+  }
+
+  /* tablet */
+  @media (min-width: 600px) {
+    margin: var(--four) auto;
+  }
+
+  /* desktop */
+  @media (min-width: 1200px) {
+    margin: var(--eight) auto;
+  }
 `
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: pink;
+  /* background: pink; */
   align-items: flex-start;
+
+  .post-frontmatter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .post-frontmatter {
+    display: flex;
+  }
 `
 
-const StyledPost = styled.article``
+const StyledPost = styled.article`
+  /* target first paragraph */
+  /* p {
+    &:first-of-type {
+      color: red;
+    }
+  } */
+`
 
 export default function post({ data }) {
   const { layout } = data.markdownRemark.frontmatter
@@ -54,10 +104,23 @@ export default function post({ data }) {
     >
       <Container>
         <Wrapper>
+          {/* <Share /> */}
+          <div className="flex">
+            <Author />
+            <TogglePlace />
+          </div>
           <StyledPost
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
-          <Author />
+          <div className="flex">
+            <Author />
+            <TogglePlace />
+          </div>
+
+          <div>
+            <Tags />
+            <Share />
+          </div>
         </Wrapper>
       </Container>
     </Layout>

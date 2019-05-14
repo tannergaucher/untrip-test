@@ -42,7 +42,13 @@ function AlmostFullBanner({ title, fluid }) {
   return (
     <StyledAlmostFullBanner>
       <Header />
-      <Img fluid={fluid} style={{ height: "calc(100vh - 142px)" }} />
+      <Img
+        fluid={fluid}
+        style={{
+          height: "calc(100vh - 142px)",
+          filter: "var(--darken-filter)",
+        }}
+      />
       <h1 className="post-title">{title}</h1>
     </StyledAlmostFullBanner>
   )

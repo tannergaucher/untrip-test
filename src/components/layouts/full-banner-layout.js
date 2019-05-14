@@ -45,7 +45,10 @@ function FullBanner({ title, fluid }) {
   return (
     <StyledFullBanner>
       <Header />
-      <Img fluid={fluid} style={{ height: "100vh" }} />
+      <Img
+        fluid={fluid}
+        style={{ height: "100vh", filter: "var(--darken-filter)" }}
+      />
       <h1 className="post-title">{title}</h1>
     </StyledFullBanner>
   )

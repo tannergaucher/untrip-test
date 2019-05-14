@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const StyledFooter = styled.footer`
   background: var(--dark-1);
   color: var(--light-1);
   padding: var(--one);
-  width: 100%;
 
   h3 {
     padding: var(--one);
@@ -13,9 +13,11 @@ const StyledFooter = styled.footer`
 `
 
 export default function footer() {
+  const { title } = useSiteMetadata()
+
   return (
     <StyledFooter>
-      <h3>Footer</h3>
+      <h3>{title}</h3>
     </StyledFooter>
   )
 }

@@ -45,7 +45,10 @@ function HalfBanner({ title, fluid }) {
   return (
     <StyledHalfBanner>
       <Header />
-      <Img fluid={fluid} style={{ height: "65vh" }} />
+      <Img
+        fluid={fluid}
+        style={{ height: "65vh", filter: "var(--darken-filter)" }}
+      />
       <h1 className="post-title">{title}</h1>
     </StyledHalfBanner>
   )
