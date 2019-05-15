@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
   }
 `
 
-export default function footer() {
+export default function Footer() {
   const { title } = useSiteMetadata()
 
   return (

@@ -12,8 +12,6 @@ const StyledShare = styled.div`
   a {
     margin-right: var(--one);
   }
-
-  /* @RESPONSIVE FLEX DIRECTION */
 `
 
 export default function share() {
