@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Basic Image Post"
+category: "Category"
 layout: "Basic Image"
 featuredImage: "./featured.jpg"
 ---

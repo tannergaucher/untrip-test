@@ -11,7 +11,6 @@ const StyledTags = styled.div`
     margin-right: var(--one);
     color: var(--dark-1);
     font-family: var(--serif);
-    /* text-decoration: none; */
 
     h5 {
       font-weight: lighter;
@@ -22,13 +21,13 @@ const StyledTags = styled.div`
 export default function PostTags() {
   return (
     <StyledTags>
-      <Link>
+      <Link to="/">
         <h5>#Tag</h5>
       </Link>
-      <Link>
+      <Link to="/">
         <h5>#Tag</h5>
       </Link>
-      <Link>
+      <Link to="/">
         <h5>#Tag</h5>
       </Link>
     </StyledTags>

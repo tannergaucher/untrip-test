@@ -18,6 +18,9 @@ const StyledApp = styled.div`
 
 const Main = styled.main`
   padding: var(--one);
+  max-width: var(--max-width);
+  /* add responsive margin-y */
+  margin: var(--three) auto;
 `
 
 const Layout = ({ children }) => (

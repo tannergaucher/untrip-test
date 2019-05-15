@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Almost Full Banner Post"
+category: "Category"
 layout: "Almost Full Banner"
 featuredImage: "./featured.jpg"
 ---

@@ -8,7 +8,6 @@ const StyledAuthor = styled.div`
   margin-bottom: var(--one);
   font-family: var(--serif);
   display: flex;
-
   align-items: center;
 
   .gatsby-image-wrapper {
@@ -19,13 +18,13 @@ const StyledAuthor = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: var(--one);
+    margin-left: var(--half);
   }
 
   .author-name,
   .date-published {
     margin: 0;
-    color: var(--dark-1);
+    color: var(--dark-2);
     font-weight: lighter;
   }
 
@@ -46,7 +45,7 @@ export default function Author({ avatarUrl, name, datePublished }) {
     query AUTHOR_AVATAR_QUERY {
       file(relativePath: { regex: "/avatar/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 45, height: 45) {
             ...GatsbyImageSharpFixed
           }
         }

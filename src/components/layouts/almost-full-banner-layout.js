@@ -45,7 +45,7 @@ function AlmostFullBanner({ title, fluid }) {
       <Img
         fluid={fluid}
         style={{
-          height: "calc(100vh - 142px)",
+          height: "calc(100vh - 128px)",
           filter: "var(--darken-filter)",
         }}
       />

@@ -2,13 +2,14 @@ import React from "react"
 
 import SEO from "../components/seo"
 import Layout from "../components/layouts/index-page-layout"
-// INDEX LAYOUT
+import Posts from "../components/index-posts"
 
 const IndexPage = () => (
-  // index layout
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi People</h1>
+    <Posts />
+    {/* NEWSLETTER */}
+    {/* ABOUT */}
   </Layout>
 )
 

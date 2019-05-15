@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Basic Layout With No Featured Image"
+category: "Category"
 layout: "Basic"
 featuredImage: "./featured.jpg"
 ---

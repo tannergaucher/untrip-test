@@ -1,5 +1,5 @@
 import React from "react"
-import { Mail, Facebook, Pinterest, Twitter, Link } from "grommet-icons"
+import { Mail, FacebookOption, Pinterest, Twitter, Link } from "grommet-icons"
 import styled from "styled-components"
 
 const StyledShare = styled.div`
@@ -18,23 +18,19 @@ export default function share() {
   return (
     <StyledShare>
       <a href="#">
-        <Link color="var(--dark-1)" />
+        <FacebookOption color="var(--dark-1)" />
       </a>
-
-      <a href="#">
-        <Mail color="var(--dark-1)" />
-      </a>
-
-      <a href="#">
-        <Pinterest color="var(--dark-1)" />
-      </a>
-
       <a href="#">
         <Twitter color="var(--dark-1)" />
       </a>
-
       <a href="#">
-        <Facebook color="var(--dark-1)" />
+        <Pinterest color="var(--dark-1)" />
+      </a>
+      <a href="#">
+        <Mail color="var(--dark-1)" />
+      </a>
+      <a href="#">
+        <Link color="var(--dark-1)" />
       </a>
     </StyledShare>
   )

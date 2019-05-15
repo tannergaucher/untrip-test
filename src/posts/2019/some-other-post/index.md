@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Three quarter banner post"
+category: "Category"
 layout: "Half Banner"
 featuredImage: "./featured.jpg"
 ---

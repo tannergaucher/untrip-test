@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Full Banner Post Page"
+category: "Category"
 layout: "Full Banner"
 featuredImage: "./featured.jpg"
 ---

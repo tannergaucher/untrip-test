@@ -4,7 +4,8 @@ import styled from "styled-components"
 import Author from "../components/post-author"
 import Tags from "../components/post-tags"
 import Share from "../components/share"
-import TogglePlace from "../containers/toggle-place"
+
+import ListDropdown from "../components/list-dropdown"
 
 // LAYOUTS
 import FullBanner from "../components/layouts/full-banner-layout"
@@ -14,26 +15,18 @@ import BasicImage from "../components/layouts/basic-image-layout"
 
 const Container = styled.div`
   display: flex;
-  /* background: lime; */
   max-width: var(--container);
-
-  /* margin: var(--one) auto; */
   padding-left: var(--one);
   padding-right: var(--one);
 
-  /* RESPONSIVE VERTICAL MARGINS */
-
-  /* mobile */
   @media (max-width: 600px) {
-    margin: var(--one) auto;
+    margin: var(--three) auto;
   }
 
-  /* tablet */
   @media (min-width: 600px) {
     margin: var(--four) auto;
   }
 
-  /* desktop */
   @media (min-width: 1200px) {
     margin: var(--eight) auto;
   }
@@ -42,7 +35,6 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* background: pink; */
   align-items: flex-start;
 
   .post-frontmatter {
@@ -66,15 +58,16 @@ const Wrapper = styled.div`
   .post-frontmatter {
     display: flex;
   }
+
+  .author {
+    margin-top: var(--one);
+    margin-bottom: var(--one);
+  }
 `
 
 const StyledPost = styled.article`
-  /* target first paragraph */
-  /* p {
-    &:first-of-type {
-      color: red;
-    }
-  } */
+  margin-top: var(--one);
+  margin-bottom: var(--one);
 `
 
 export default function post({ data }) {
@@ -104,22 +97,20 @@ export default function post({ data }) {
     >
       <Container>
         <Wrapper>
-          {/* <Share /> */}
           <div className="flex">
-            <Author />
-            <TogglePlace />
+            <Share />
+            <ListDropdown />
           </div>
           <StyledPost
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
           <div className="flex">
-            <Author />
-            <TogglePlace />
-          </div>
-
-          <div>
-            <Tags />
             <Share />
+            <ListDropdown />
+          </div>
+          <div className="author">
+            <Author />
+            <Tags />
           </div>
         </Wrapper>
       </Container>

@@ -1,6 +1,7 @@
 ---
 date: ""
 title: "Half Banner Post"
+category: "Category"
 layout: "Half Banner"
 featuredImage: "./featured.jpg"
 ---
