@@ -1,0 +1,39 @@
+enum Permission {
+  ADMIN
+  FREE_USER
+  PAID_LEVEL_ONE
+}
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  lists: [List!]
+  events: [Event!]
+  permissions: [Permission] @scalarList(strategy: RELATION)
+}
+
+type List {
+  id: ID! @id
+  title: String!
+  places: [Place!] @relation(name: "PlacesOfList", onDelete: CASCADE)
+  user: User!
+  isPrivate: Boolean @default(value: false)
+}
+
+type Place {
+  id: ID! @id
+  postId: String
+  name: String
+  image: String
+  list: List! @relation(name: "PlacesOfList")
+}
+
+type Event {
+  id: ID! @id
+  postId: String!
+  name: String
+  image: String
+  user: User!
+}

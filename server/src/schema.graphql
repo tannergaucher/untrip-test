@@ -1,0 +1,75 @@
+scalar DateTime
+scalar Json
+
+enum Permission {
+  ADMIN
+  FREE_USER
+  PAID_LEVEL_ONE
+}
+
+type SuccessMessage {
+  message: String
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  lists: [List!]!
+  events: [Event!]!
+  permissions: [Permission]
+}
+
+type List {
+  id: ID!
+  title: String!
+  places: [Place!]!
+  user: User!
+  isPrivate: Boolean
+}
+
+type Place {
+  id: ID!
+  postId: String
+  list: List!
+  name: String
+  image: String
+}
+
+type Event {
+  id: ID!
+  postId: String!
+  name: String
+  image: String
+  user: User!
+}
+
+type Query {
+  me: User
+  list(listId: ID!): List!
+  lists: [List!]!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String): AuthPayload!
+  logout: SuccessMessage
+  toggleEvent(postId: String!, name: String, image: String): Event
+  createList(
+    title: String!
+    postId: String!
+    name: String!
+    image: String!
+  ): List
+  deleteList(listId: ID!): List
+  # change to togglePost / return a post ?
+  togglePlace(listId: ID!, postId: String!, name: String!, image: String): Place
+  toggleIsPrivateList(listId: ID!): List
+  updateListTitle(listId: ID!, newTitle: String!): List
+}

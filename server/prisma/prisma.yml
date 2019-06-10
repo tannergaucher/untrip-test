@@ -1,0 +1,11 @@
+endpoint: https://us1.prisma.sh/tanner-gaucher/untripdemo/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - prisma generate
